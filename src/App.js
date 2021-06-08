@@ -44,13 +44,19 @@ class App extends Component{
         <tr>
           <th>Picture</th>
           <th>Name</th>
-          <th>Popularity</th>
+            <th>Popularity</th>
+            <th>Action</th>
         </tr>
-        {initialContacts.map((contact, index) =>
-          <tr key={index}>
+        {initialContacts.map((contact, i) =>
+          <tr key={i} id={i}>
             <td><img className="contactImage" src={contact.pictureUrl} alt={ contact.name}/></td>
             <td>{contact.name}</td>
             <td>{contact.popularity.toFixed(2)}</td>
+            <td><button onClick={function() {
+              const x = document.getElementById(i);
+              return (x.parentNode) ? x.parentNode.removeChild(x) : null
+            }
+            }>Delete</button></td>
           </tr>
         )}
     </table>
