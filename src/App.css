@@ -5,3 +5,7 @@
 .contactImage {
   width: 50px;
 }
+
+.contactsTable {
+  margin: 1rem auto;
+}
